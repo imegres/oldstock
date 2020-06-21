@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import menu from '../static/svg/menu.svg';
 import { Button } from '@material-ui/core';
+import { Menu } from '@material-ui/icons';
 
 export default class Header extends React.Component {
   render() {
@@ -9,7 +10,7 @@ export default class Header extends React.Component {
       <HeaderComponent>
         <div className="header">
           <div>
-            <img src={menu} alt="menu" />
+            <Menu color="secondary" />
           </div>
           <div>
             <Button variant="contained" color="secondary">

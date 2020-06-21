@@ -1,13 +1,12 @@
+import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
-
+import Footer from '../components/Footer';
 import Header from '../components/Header';
-
 import chain from '../static/svg/chain.svg';
-import support from '../static/svg/support.svg';
-import note from '../static/svg/note.svg';
 import cloud from '../static/svg/cloud.svg';
-import Head from 'next/head';
+import note from '../static/svg/note.svg';
+import support from '../static/svg/support.svg';
 
 export default class Index extends React.Component {
   render() {
@@ -173,6 +172,7 @@ export default class Index extends React.Component {
             </section>
           </div>
         </div>
+        <Footer />
       </Body>
     );
   }
