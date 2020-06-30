@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import menu from '../static/svg/menu.svg';
 import { Button } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
+import React from 'react';
+import styled from 'styled-components';
+import Navbar from './Navbar';
 
 export default class Header extends React.Component {
   render() {
@@ -13,11 +13,18 @@ export default class Header extends React.Component {
             <Menu color="secondary" />
           </div>
           <div>
-            <Button variant="contained" color="secondary">
+            <Button
+              onClick={() => {
+                window.location.assign('http://app.webstock.com.br/');
+              }}
+              variant="contained"
+              color="secondary"
+            >
               ACESSAR
             </Button>
           </div>
         </div>
+        <Navbar />
       </HeaderComponent>
     );
   }
@@ -27,9 +34,9 @@ const HeaderComponent = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1;
 
   .header {
+    z-index: 3;
     display: flex;
     background: #fff;
     align-items: center;
