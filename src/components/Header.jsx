@@ -3,6 +3,7 @@ import { Menu } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
+import Router from 'next/router';
 
 export default class Header extends React.Component {
   render() {
@@ -10,7 +11,29 @@ export default class Header extends React.Component {
       <HeaderComponent>
         <div style={{ background: this.props.background }} className="header">
           <div>
-            <Menu color="secondary" />
+            <Menu className="nav-button" color="secondary" />
+          </div>
+          <div className="menu">
+            <ul>
+              <li>
+                <a
+                  onClick={() => {
+                    Router.push({ pathname: '/' });
+                  }}
+                >
+                  Início
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => {
+                    Router.push({ pathname: '/funcionalidades' });
+                  }}
+                >
+                  Funcionalidades
+                </a>
+              </li>
+            </ul>
           </div>
           <div>
             <Button
@@ -41,16 +64,46 @@ const HeaderComponent = styled.header`
     height: 72px;
   }
 
-  .mobile-hidden {
-    display: none;
-    @media (min-width: 1024px) {
-      display: block;
+  .nav-button {
+    @media (min-width: 720px) {
+      display: none;
     }
   }
 
-  .desktop-hidden {
+  .menu {
+    width: 1170px;
     display: none;
-    @media (max-width: 1023px) {
+
+    ul {
+      display: flex;
+      li {
+        list-style-type: none;
+        margin-right: 36px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: rgba(255, 255, 255, 0.7);
+          user-select: none;
+
+          :hover {
+            color: rgba(255, 255, 255, 1);
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 720px) {
+      display: flex;
+    }
+  }
+
+  .mobile-hidden {
+    display: none;
+    @media (min-width: 1024px) {
       display: block;
     }
   }
