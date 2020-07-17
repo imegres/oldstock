@@ -406,10 +406,9 @@ const Container = styled.div`
 
   h1 {
     z-index: 100;
-    font-size: 36px;
+    font-size: 36pt;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
     text-transform: uppercase;
 
     color: rgba(255, 255, 255, 0.9);
@@ -490,7 +489,7 @@ const Container = styled.div`
     }
 
     .item p {
-      font-size: 26px;
+      font-size: 16pt;
     }
 
     .item {
@@ -502,11 +501,11 @@ const Container = styled.div`
     }
 
     .step h1 {
-      font-size: 48px;
+      font-size: 28pt;
     }
 
     .step p {
-      font-size: 18px;
+      font-size: 14pt;
     }
   }
 
@@ -516,7 +515,7 @@ const Container = styled.div`
       align-items: center;
     }
     h1 {
-      font-size: 64px;
+      font-size: 36pt;
     }
 
     .step .text p {
