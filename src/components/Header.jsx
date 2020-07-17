@@ -8,7 +8,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <HeaderComponent>
-        <div className="header">
+        <div style={{ background: this.props.background }} className="header">
           <div>
             <Menu color="secondary" />
           </div>
@@ -24,7 +24,6 @@ export default class Header extends React.Component {
             </Button>
           </div>
         </div>
-        <Navbar />
       </HeaderComponent>
     );
   }
@@ -32,18 +31,14 @@ export default class Header extends React.Component {
 
 const HeaderComponent = styled.header`
   width: 100%;
-  position: fixed;
-  top: 0;
 
   .header {
     z-index: 3;
     display: flex;
-    background: #fff;
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
     height: 72px;
-    box-shadow: 0 0 14px 0 rgba(53, 64, 82, 0.15);
   }
 
   .mobile-hidden {

@@ -7,7 +7,7 @@ export default class footerComponent extends React.Component {
     return (
       <Footer
         style={{
-          backgroundColor: '#1428bf',
+          backgroundColor: '#5c22d8',
           color: '#fff',
         }}
       >
