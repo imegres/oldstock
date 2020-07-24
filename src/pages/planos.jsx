@@ -1,13 +1,17 @@
 import { Button } from '@material-ui/core';
 import Head from 'next/head';
-import Router from 'next/router';
 import React from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import wave from '../static/svg/plansWave.svg';
 
 export default class Planos extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize('UA-140182307-3');
+    ReactGA.pageview('webstock' + window.location.pathname + window.location.search);
+  }
   render() {
     return (
       <Container>
