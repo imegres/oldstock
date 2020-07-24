@@ -33,6 +33,15 @@ export default class Header extends React.Component {
                   Funcionalidades
                 </a>
               </li>
+              <li>
+                <a
+                  onClick={() => {
+                    Router.push({ pathname: '/planos' });
+                  }}
+                >
+                  Planos
+                </a>
+              </li>
             </ul>
           </div>
           <div>

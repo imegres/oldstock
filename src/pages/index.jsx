@@ -1,24 +1,30 @@
+import { Button } from '@material-ui/core';
 import Head from 'next/head';
 import React from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import chain from '../static/svg/chain.svg';
 import cloud from '../static/svg/cloud.svg';
+import wave from '../static/svg/indexWave.svg';
 import note from '../static/svg/note.svg';
 import support from '../static/svg/support.svg';
-import wave from '../static/svg/indexWave.svg';
-import { Button } from '@material-ui/core';
 
 export default class Index extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize('UA-140182307-3');
+    ReactGA.pageview('webstock' + window.location.pathname + window.location.search);
+  }
+
   render() {
     return (
       <Body>
         <Head>
-          <title>Webstock | Gestão de pequenos negócios</title>
+          <title>Webstock | Sistema ERP gratuíto</title>
           <meta
             name="description"
-            content="Webstock é um sistema para a gestão de pequenos negócios, aqui você controla suas vendas, estoque, produtos, fornecedores, pagamentos, clientes e muito mais!"
+            content="Webstock é um sistema ERP, destinado a gestão de pequenos negócios, aqui você controla suas vendas, estoque, produtos, fornecedores, pagamentos, clientes e muito mais!"
           />
           <meta name="keywords" content="controle, estoque, produtos, vendas, compras, clientes" />
           <meta name="author" content="José Augusto Megres de Oliveira" />
@@ -30,7 +36,6 @@ export default class Index extends React.Component {
           {/* -------------------------------------------------------------------------- */}
           {/*                              PRIMEIRO CONTEÚDO                             */}
           {/* -------------------------------------------------------------------------- */}
-
           <div className="content">
             <div>
               <section className="text">
@@ -56,11 +61,9 @@ export default class Index extends React.Component {
             </div>
           </div>
           <img src={wave} alt="wave" />
-
           {/* -------------------------------------------------------------------------- */}
           {/*                              SEGUNDO CONTEÚDO                              */}
           {/* -------------------------------------------------------------------------- */}
-
           <div className="content">
             <div>
               <section>
@@ -120,26 +123,13 @@ export default class Index extends React.Component {
               </section>
             </div>
           </div>
-
-          {/**
+          <img src={wave} className="wave-inverted" alt="wave" />
           <div className="content">
             <section>
-              <div className="line first"></div>
-              <h2>Teste gratuíto</h2>
-              <p>
-                Temos confiança em nosso produto, por isso oferecemos teste gratuíto, sem cartão de
-                crédito, é só se registrar e começar a testar!
-              </p>
-              <div className="line second"></div>
-            </section>
-          </div>
-
-          <div className="content">
-            <section>
-              <h2>O que mais oferecemos?</h2>
+              <h1>O que mais oferecemos?</h1>
 
               <div className="card-container">
-                <div className="card">
+                <div className="small-card">
                   <img src={support} alt="support" />
                   <section>
                     <h3>Suporte ativo!</h3>
@@ -150,7 +140,7 @@ export default class Index extends React.Component {
                   </section>
                 </div>
 
-                <div className="card">
+                <div className="small-card">
                   <img src={cloud} alt="cloud" />
                   <section>
                     <h3>Alta disponibilidade</h3>
@@ -160,10 +150,8 @@ export default class Index extends React.Component {
                     </p>
                   </section>
                 </div>
-              </div>
 
-              <div className="card-container">
-                <div className="card">
+                <div className="small-card">
                   <img src={chain} alt="chain" />
                   <section>
                     <h3>Sem compromisso</h3>
@@ -174,7 +162,7 @@ export default class Index extends React.Component {
                   </section>
                 </div>
 
-                <div className="card">
+                <div className="small-card">
                   <img src={note} alt="note" />
                   <section>
                     <h3>Sem dificuldade</h3>
@@ -186,7 +174,7 @@ export default class Index extends React.Component {
                 </div>
               </div>
             </section>
-          </div> */}
+          </div>
         </div>
 
         <Footer />
@@ -199,6 +187,10 @@ const Body = styled.div`
   .content {
     font-size: 14pt;
     padding: 16px;
+  }
+
+  .wave-inverted {
+    transform: rotate(180deg) translateY(-8px);
   }
 
   .content h1 {
@@ -364,6 +356,41 @@ const Body = styled.div`
   @media (min-width: 720px) {
     .content:nth-child(3) > div {
       flex-direction: row;
+      align-items: center;
     }
+  }
+
+  /* --------------------------- TERCEIRO COMPONENTE -------------------------- */
+
+  .content:nth-child(5) {
+    background: #5c22d8;
+  }
+
+  .content:nth-child(5) h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .content:nth-child(5) .small-card {
+    background: #fff;
+    width: 400px;
+    padding: 16px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  .content:nth-child(5) .card-container {
+    display: flex;
+    max-width: 1170px;
+    margin: auto;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
   }
 `;
