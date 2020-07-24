@@ -2,13 +2,12 @@ import { Fab, Grow, MobileStepper } from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import Head from 'next/head';
 import React from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import dashboardImg from '../static/image/dashboard.png';
 import vetor from '../static/svg/pages/funcionalidades/vetor.svg';
-
-import pattern from '../static/svg/background_icons/pattern.svg';
 
 export default class Funcionalidades extends React.Component {
   constructor() {
@@ -17,6 +16,11 @@ export default class Funcionalidades extends React.Component {
     this.state = {
       activeStep: 0,
     };
+  }
+
+  componentDidMount() {
+    ReactGA.initialize('UA-140182307-3');
+    ReactGA.pageview('webstock' + window.location.pathname + window.location.search);
   }
 
   render() {
@@ -29,7 +33,7 @@ export default class Funcionalidades extends React.Component {
     return (
       <>
         <Head>
-          <title>Funcionalidades</title>
+          <title>Webstock | Funcionalidades</title>
           <meta
             name="description"
             content="A webstock contém diversas funcionalidades que vão desde um dashboard completo até relatórios em excel!"

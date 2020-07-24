@@ -1,24 +1,30 @@
+import { Button } from '@material-ui/core';
 import Head from 'next/head';
 import React from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import chain from '../static/svg/chain.svg';
 import cloud from '../static/svg/cloud.svg';
+import wave from '../static/svg/indexWave.svg';
 import note from '../static/svg/note.svg';
 import support from '../static/svg/support.svg';
-import wave from '../static/svg/indexWave.svg';
-import { Button } from '@material-ui/core';
 
 export default class Index extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize('UA-140182307-3');
+    ReactGA.pageview('webstock' + window.location.pathname + window.location.search);
+  }
+
   render() {
     return (
       <Body>
         <Head>
-          <title>Webstock | Gestão de pequenos negócios</title>
+          <title>Webstock | Sistema ERP gratuíto</title>
           <meta
             name="description"
-            content="Webstock é um sistema para a gestão de pequenos negócios, aqui você controla suas vendas, estoque, produtos, fornecedores, pagamentos, clientes e muito mais!"
+            content="Webstock é um sistema ERP, destinado a gestão de pequenos negócios, aqui você controla suas vendas, estoque, produtos, fornecedores, pagamentos, clientes e muito mais!"
           />
           <meta name="keywords" content="controle, estoque, produtos, vendas, compras, clientes" />
           <meta name="author" content="José Augusto Megres de Oliveira" />
