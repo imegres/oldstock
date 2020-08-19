@@ -14,6 +14,7 @@ import note from '../static/svg/note.svg';
 import support from '../static/svg/support.svg';
 import { Fab, Grow, MobileStepper } from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+const tawkTo = require('tawkto-react');
 
 export default class Index extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ export default class Index extends React.Component {
   }
 
   componentDidMount() {
+    tawkTo('5f2aff005c885a1b7fb6a211');
     ReactGA.initialize('UA-140182307-3');
     ReactGA.pageview('webstock' + window.location.pathname + window.location.search);
   }
@@ -119,14 +121,14 @@ export default class Index extends React.Component {
                 </div>
               </div>
               <div className="card">
-                <h1>Por que eu devo assinar a webstock?</h1>
+                <h1>Por que eu devo utilizar a webstock?</h1>
 
                 <div>
                   <h2>1. Nunca perca seus prazos</h2>
                   <p>
                     Houve alguma vez que você se esqueceu de pagar algum fornecedor? Se sim eis aqui
                     o primeiro motivo, webstock te dá um relatório de todos seus pagamentos após o
-                    cadastro, além disso avisamos com antecedência os prazos de seus pagamentos.
+                    cadastro, além disso avisamos se você deixar passar algum pagamento.
                   </p>
                 </div>
 
