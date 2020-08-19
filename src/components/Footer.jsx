@@ -7,7 +7,8 @@ export default class footerComponent extends React.Component {
     return (
       <Footer
         style={{
-          backgroundColor: '#5c22d8',
+          backgroundColor: '#273036',
+          paddingTop: '200px',
           color: '#fff',
         }}
       >
@@ -58,7 +59,7 @@ export default class footerComponent extends React.Component {
             </div>
           </FooterRow>
            */}
-          <hr style={{ width: '90%', border: `.5px solid ${'#ff5cf0'}` }}></hr>
+          <hr style={{ width: '90%', border: `.5px solid ${'#ff5cf0'}` }} />
           <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
             <div style={{ marginTop: 20, fontSize: 12, textAlign: 'center' }}>
               Copyright © 2020 Webstock. Todos os direitos reservados.

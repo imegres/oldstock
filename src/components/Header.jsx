@@ -10,15 +10,12 @@ export default class Header extends React.Component {
     return (
       <HeaderComponent>
         <div className="header">
-          <div>
-            <Menu className="nav-button" color="secondary" />
-          </div>
-          <div className="menu">
+          <nav>
             <ul>
               <li>
                 <a
                   onClick={() => {
-                    Router.push({ pathname: '/' });
+                    window.location.assign('#inicio');
                   }}
                 >
                   Início
@@ -27,23 +24,23 @@ export default class Header extends React.Component {
               <li>
                 <a
                   onClick={() => {
-                    Router.push('#funcionalidades');
+                    window.location.assign('#funcionalidades');
                   }}
                 >
                   Funcionalidades
                 </a>
               </li>
             </ul>
-          </div>
-          <div>
+          </nav>
+          <div style={{ margin: 'auto 0' }}>
             <Button
               onClick={() => {
-                Router.push('http://app.webstock.com.br');
+                window.location.assign('http://app.webstock.com.br');
               }}
+              color="primary"
               variant="contained"
-              color="secondary"
             >
-              ACESSAR
+              Acessar
             </Button>
           </div>
         </div>
@@ -58,54 +55,23 @@ const HeaderComponent = styled.header`
   .header {
     z-index: 3;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    height: 72px;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     background: #fff;
+    padding: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
   }
 
-  .nav-button {
-    @media (min-width: 720px) {
-      display: none;
-    }
-  }
+  .header nav ul {
+    display: flex;
 
-  .menu {
-    width: 1170px;
-    display: none;
-
-    ul {
-      display: flex;
-      li {
-        list-style-type: none;
-        margin-right: 36px;
-        text-transform: uppercase;
-        font-weight: bold;
-        cursor: pointer;
-
-        a {
-          text-decoration: none;
-          color: rgba(0, 0, 0, 0.7);
-          user-select: none;
-
-          :hover {
-            color: rgba(0, 0, 0, 1);
-            transition: 0.3s;
-          }
-        }
-      }
-    }
-
-    @media (min-width: 720px) {
-      display: flex;
-    }
-  }
-
-  .mobile-hidden {
-    display: none;
-    @media (min-width: 1024px) {
-      display: block;
+    li {
+      margin-right: 16px;
+      list-style-type: none;
+      cursor: pointer;
     }
   }
 `;
