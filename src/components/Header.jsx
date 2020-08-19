@@ -9,7 +9,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <HeaderComponent>
-        <div style={{ background: this.props.background }} className="header">
+        <div className="header">
           <div>
             <Menu className="nav-button" color="secondary" />
           </div>
@@ -27,19 +27,10 @@ export default class Header extends React.Component {
               <li>
                 <a
                   onClick={() => {
-                    Router.push({ pathname: '/funcionalidades' });
+                    Router.push('#funcionalidades');
                   }}
                 >
                   Funcionalidades
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={() => {
-                    Router.push({ pathname: '/planos' });
-                  }}
-                >
-                  Planos
                 </a>
               </li>
             </ul>
@@ -47,7 +38,7 @@ export default class Header extends React.Component {
           <div>
             <Button
               onClick={() => {
-                window.location.assign('http://app.webstock.com.br/');
+                Router.push('http://app.webstock.com.br');
               }}
               variant="contained"
               color="secondary"
@@ -71,6 +62,7 @@ const HeaderComponent = styled.header`
     justify-content: space-between;
     padding: 0 32px;
     height: 72px;
+    background: #fff;
   }
 
   .nav-button {
@@ -94,11 +86,11 @@ const HeaderComponent = styled.header`
 
         a {
           text-decoration: none;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(0, 0, 0, 0.7);
           user-select: none;
 
           :hover {
-            color: rgba(255, 255, 255, 1);
+            color: rgba(0, 0, 0, 1);
             transition: 0.3s;
           }
         }

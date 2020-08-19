@@ -16,13 +16,14 @@ export default class footerComponent extends React.Component {
             <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
               <h2 style={{ color: '#fff' }}>Precisa de ajuda?</h2>
               <p style={{ margin: 0 }}>
-                Acesse nosso <b style={{ color: '##fff', cursor: 'pointer' }}>FAQ</b> ou envie um
-                email para{' '}
-                <b style={{ color: '#ff5cf0', cursor: 'pointer' }}>meajuda@webstock.com.br</b>,
+                Inicie uma conversa conosco <b style={{ color: '##fff', cursor: 'pointer' }}>FAQ</b>{' '}
+                ou envie um email para{' '}
+                <b style={{ color: '#ff5cf0', cursor: 'pointer' }}>webstock@webstock.com.br</b>,
                 responderemos assim que possível!
               </p>
             </div>
           </FooterRow>
+          {/**
           <FooterRow>
             <div>
               <h5 style={{ textAlign: 'center', color: '#fff' }}>Sobre nós</h5>
@@ -56,6 +57,7 @@ export default class footerComponent extends React.Component {
               </ul>
             </div>
           </FooterRow>
+           */}
           <hr style={{ width: '90%', border: `.5px solid ${'#ff5cf0'}` }}></hr>
           <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
             <div style={{ marginTop: 20, fontSize: 12, textAlign: 'center' }}>
