@@ -113,8 +113,8 @@ export default class Index extends React.Component {
                 <div>
                   <h1>Qual o valor da assinatura?</h1>
                   <p>
-                    A aplicação está de graça durante a sua versão alpha, o que deve durar até 2021,
-                    então é só acessar e começar a desfrutar sem limites.
+                    A aplicação está de graça durante a sua versão alpha, que ainda não tem uma
+                    previsão de término, então é só acessar e começar a desfrutar sem limites.
                   </p>
                 </div>
               </div>
