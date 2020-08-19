@@ -14,6 +14,7 @@ import note from '../static/svg/note.svg';
 import support from '../static/svg/support.svg';
 import { Fab, Grow, MobileStepper } from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+const tawkTo = require('tawkto-react');
 
 export default class Index extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ export default class Index extends React.Component {
   }
 
   componentDidMount() {
+    tawkTo('5f2aff005c885a1b7fb6a211');
     ReactGA.initialize('UA-140182307-3');
     ReactGA.pageview('webstock' + window.location.pathname + window.location.search);
   }
