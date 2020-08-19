@@ -121,14 +121,14 @@ export default class Index extends React.Component {
                 </div>
               </div>
               <div className="card">
-                <h1>Por que eu devo assinar a webstock?</h1>
+                <h1>Por que eu devo utilizar a webstock?</h1>
 
                 <div>
                   <h2>1. Nunca perca seus prazos</h2>
                   <p>
                     Houve alguma vez que você se esqueceu de pagar algum fornecedor? Se sim eis aqui
                     o primeiro motivo, webstock te dá um relatório de todos seus pagamentos após o
-                    cadastro, além disso avisamos com antecedência os prazos de seus pagamentos.
+                    cadastro, além disso avisamos se você deixar passar algum pagamento.
                   </p>
                 </div>
 
