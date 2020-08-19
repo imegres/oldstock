@@ -9,7 +9,12 @@ import chain from '../static/svg/chain.svg';
 import cloud from '../static/svg/cloud.svg';
 import wave from '../static/svg/indexWave.svg';
 import funcWave from '../static/svg/funcWave.svg';
+import clientesImg from '../static/image/clientes.png';
 import dashboardImg from '../static/image/dashboard.png';
+import financeiroImg from '../static/image/financeiro.png';
+import fornecedoresImg from '../static/image/fornecedores.png';
+import funcionariosImg from '../static/image/funcionarios.png';
+import produtosImg from '../static/image/produtos.png';
 import note from '../static/svg/note.svg';
 import support from '../static/svg/support.svg';
 import { Fab, Grow, MobileStepper } from '@material-ui/core';
@@ -227,7 +232,7 @@ export default class Index extends React.Component {
               </div>
 
               <div className="image">
-                <img src={dashboardImg}></img>
+                <img src={produtosImg}></img>
                 <div className="button">
                   <div style={{ margin: 8 }}>
                     <Fab size="small" onClick={handlePrev} color="primary">
@@ -260,7 +265,7 @@ export default class Index extends React.Component {
               </div>
 
               <div className="image">
-                <img src={dashboardImg}></img>
+                <img src={financeiroImg}></img>
                 <div className="button">
                   <div style={{ margin: 8 }}>
                     <Fab size="small" onClick={handlePrev} color="primary">
@@ -292,7 +297,7 @@ export default class Index extends React.Component {
               </div>
 
               <div className="image">
-                <img src={dashboardImg}></img>
+                <img src={funcionariosImg}></img>
                 <div className="button">
                   <div style={{ margin: 8 }}>
                     <Fab size="small" onClick={handlePrev} color="primary">
@@ -325,7 +330,7 @@ export default class Index extends React.Component {
               </div>
 
               <div className="image">
-                <img src={dashboardImg}></img>
+                <img src={clientesImg}></img>
                 <div className="button">
                   <div style={{ margin: 8 }}>
                     <Fab size="small" onClick={handlePrev} color="primary">
@@ -359,7 +364,7 @@ export default class Index extends React.Component {
               </div>
 
               <div className="image">
-                <img src={dashboardImg}></img>
+                <img src={fornecedoresImg}></img>
                 <div className="button">
                   <div style={{ margin: 8 }}>
                     <Fab size="small" onClick={handlePrev} color="primary">
@@ -490,6 +495,7 @@ const Body = styled.div`
   section:nth-child(5) .text {
     flex: 0.4;
     align-self: flex-start;
+    height: 400px;
   }
 
   section:nth-child(5) .image {
