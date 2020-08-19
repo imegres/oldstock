@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import chain from '../static/svg/chain.svg';
 import cloud from '../static/svg/cloud.svg';
 import wave from '../static/svg/indexWave.svg';
+import funcWave from '../static/svg/funcWave.svg';
 import dashboardImg from '../static/image/dashboard.png';
 import note from '../static/svg/note.svg';
 import support from '../static/svg/support.svg';
@@ -58,7 +59,7 @@ export default class Index extends React.Component {
         </Head>
         <Header background="#5c22d8" />
 
-        <div className="container">
+        <div id="inicio" className="container">
           {/* -------------------------------------------------------------------------- */}
           {/*                              PRIMEIRO CONTEÚDO                             */}
           {/* -------------------------------------------------------------------------- */}
@@ -70,7 +71,13 @@ export default class Index extends React.Component {
                   Aqui na webstock nós valorizamos a simplicidade do negócio, e buscamos sempre
                   tornar sua gestão mais ágil, simples e descomplicada.
                 </p>
-                <Button color="primary" variant="outlined">
+                <Button
+                  color="primary"
+                  variant="outlined"
+                  onClick={() => {
+                    window.location.assign('http://app.webstock.com.br/login');
+                  }}
+                >
                   Teste gratuitamente
                 </Button>
               </div>
@@ -106,8 +113,8 @@ export default class Index extends React.Component {
                 <div>
                   <h1>Qual o valor da assinatura?</h1>
                   <p>
-                    A aplicação está de graça durante a sua versão alpha, o que deve durar até 2021,
-                    então é só acessar e começar a desfrutar sem limites.
+                    A aplicação está de graça durante a sua versão alpha, que ainda não tem uma
+                    previsão de término, então é só acessar e começar a desfrutar sem limites.
                   </p>
                 </div>
               </div>
@@ -150,6 +157,7 @@ export default class Index extends React.Component {
               </div>
             </div>
           </section>
+
           <img
             src={wave}
             style={{
@@ -159,6 +167,7 @@ export default class Index extends React.Component {
             }}
             alt="wave"
           />
+
           <section id="funcionalidades" className="content">
             {/* -------------------------------------------------------------------------- */}
             {/*                                  DASHBOARD                                 */}
@@ -364,6 +373,8 @@ export default class Index extends React.Component {
               </div>
             </div>
           </section>
+
+          <img src={funcWave} alt="wave" style={{ position: 'absolute' }} />
         </div>
 
         <Footer />
@@ -381,6 +392,7 @@ const Body = styled.div`
   section:nth-child(1) {
     background: #fff;
     transform: translateY(15%);
+    padding-top: 32px;
   }
   section:nth-child(1) > div {
     display: flex;
@@ -389,8 +401,18 @@ const Body = styled.div`
     justify-content: space-around;
     max-width: 1170px;
 
+    @media (max-width: 720px) {
+      lottie-player {
+        display: none;
+      }
+    }
+
     div:nth-child(1) {
       flex: 0.7;
+      @media (max-width: 720px) {
+        margin: 16px;
+        flex: 1;
+      }
     }
 
     h1 {
@@ -411,6 +433,10 @@ const Body = styled.div`
     justify-content: space-around;
     z-index: 1;
     max-width: 1170px;
+    @media (max-width: 980px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     h1 {
       font-size: 32pt;
@@ -424,6 +450,9 @@ const Body = styled.div`
     .text {
       align-self: flex-start;
       flex: 0.7;
+      @media (max-width: 980px) {
+        margin: 16px;
+      }
     }
     .card {
       color: #fff;
@@ -432,6 +461,9 @@ const Body = styled.div`
       border-radius: 8px;
       padding: 32px;
       margin-left: auto;
+      @media (max-width: 980px) {
+        margin-left: 0;
+      }
 
       h1 {
         font-size: 18pt;
@@ -464,7 +496,8 @@ const Body = styled.div`
     position: relative;
 
     img {
-      max-width: 600px;
+      max-width: 95%;
+      width: 650px;
       border-radius: 16px;
     }
 
@@ -487,6 +520,11 @@ const Body = styled.div`
     justify-content: space-around;
     z-index: 1;
     max-width: 1170px;
+    padding: 16px;
+
+    @media (max-width: 980px) {
+      flex-direction: column;
+    }
 
     div:nth-child(5) {
       flex: 0.7;
