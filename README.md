@@ -24,3 +24,6 @@ O projeto contém diversas tecnologias web, pacotes e frameworks, abaixo segue u
  - [NodeJS](https://nodejs.org/en/).
  - [NextJS](https://nextjs.org/).
  - [Apexcharts](https://apexcharts.com/).
+
+Os repositórios também estão conectados com tecnologias como a vercel (APP e INDEX) e o google cloud (API), qualquer alteração na branch **master** gera uma nova build nestas aplicações de forma automática.
+
